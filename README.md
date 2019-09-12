@@ -8,6 +8,7 @@
 ## ERD HERE
 
 ## LINK TO PITCH DECK
+
 ## LINK TO TRELLO
 
 ## LINK TO HEROKU
@@ -19,7 +20,6 @@
 - CSS / HTML
 - Spotify API (tbd - stretch)
 - SMS Messaging API (tbd)
-- 
 
 ## Stretch Goals:
 - Spotify API
