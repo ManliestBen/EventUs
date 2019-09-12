@@ -2,7 +2,7 @@
 ## Focus on the party
 
 ## Introduction:
-### How many times have you gotten to the party and there's no ice?  To the BBQ and there's no charcoal?  How many times have you had to send people away to fetch a piece that has been forgotten?  Now, there's an app for that! Introducing EventUs!  The perfect online platform that plans every part of your party.
+### How many times have you gotten to the party and there's no ice?  To the BBQ and there's no charcoal?  How many times have you had to send people away to fetch something that has been forgotten?  Now, there's an app for that! Introducing EventUs!  The perfect online platform that plans every part of your party.
 
 ## WIREFRAME HERE
 ## ERD HERE
