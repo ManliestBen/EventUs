@@ -7,8 +7,7 @@
 ## Entity Relationship Diagram:
 ![ERD image](assets/wireframe2.png)
 ## Wireframe of Pages:
-![Page layout wireframe](assets/wireframe2.png)
-
+![Page layout wireframe](assets/ParrotyWireframe.png)
 ## Here is a link to our [pitch deck](https://docs.google.com/presentation/d/1OT_RDEHj0WkTT491Q2uGVndk18ljhklRSpTLNGARV9c/edit?usp=sharing)
 ## Here is our [Trello Board](https://trello.com/b/7x3lbQZp/unit-3-project-sei)
 
