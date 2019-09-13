@@ -20,7 +20,7 @@
 - CSS / HTML
 - Spotify API (tbd - stretch)
 - SMS Messaging API (tbd)
-- 
+  
 
 ## Stretch Goals:
 - Spotify API
