@@ -31,6 +31,9 @@ class Item(models.Model):
     priority = models.CharField(max_length=50)
     cost = models.FloatField()
 
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+
+
     def __str__(self):
         return self.name
 
