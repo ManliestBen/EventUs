@@ -5,7 +5,8 @@ from django.views.generic import ListView, DetailView
 import uuid
 import boto3
 
-from .models import Event, Photo
+from .models import Event, Photo, Item
+from .forms import ItemForm
 
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
 BUCKET = 'eventus-cns'
@@ -26,11 +27,13 @@ def events_index(request):
 
 def events_detail(request, event_id):
   event = Event.objects.get(id=event_id)
-  return render(request, 'events/detail.html', { 'event': event })
+  item_form = ItemForm()
+  return render(request, 'events/detail.html', { 'event': event, 'item_form': item_form })
 
 class EventUpdate(UpdateView):
   model = Event
   fields = ['name', 'what', 'date', 'where', 'why', 'organizer']
+  success_url = '/events/'
 
 class EventDelete(DeleteView):
   model = Event
@@ -55,3 +58,22 @@ def add_photo(request, event_id):
             print('An error occurred uploading file to S3')
     return redirect('detail', event_id=event_id)
 
+def add_item(request, event_id):
+  form = ItemForm(request.POST)
+  if form.is_valid():
+    new_item = form.save(commit=False)
+    new_item.event_id = event_id
+    new_item.save()
+  return redirect('detail', event_id=event_id)
+
+# def get_item_from_request(request):
+#     print(request.POST)
+#     return the_item
+
+# def delete_post(request):
+#     the_post = get_post_from_request(request)
+#     if request.user == the_post.User:
+#         the_post.delete()
+#         return http.HttpResponseRedirect("/your/success/url/")
+#     else:
+#         return http.HttpResponseForbidden("Cannot delete other's posts")
