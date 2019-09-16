@@ -34,6 +34,9 @@ class Item(models.Model):
     def __str__(self):
         return self.name
 
-events = [
-    Event('Calebs test event 2', 'test2', 'testlocation2', 'cause its the second test', 'look at me, im the organizer now'),
-]
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+
+def __str__(self):
+    return f"Photo for event_id: {self.event_id} @{self.url}"

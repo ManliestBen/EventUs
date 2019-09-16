@@ -1,7 +1,13 @@
 from django.shortcuts import render
-from .models import Event
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
+import uuid
+import boto3
+
+from .models import Event, Photo
+
+S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
+BUCKET = 'eventus-cns'
 
 # Create your views here.
 
@@ -33,3 +39,4 @@ class EventCreate(CreateView):
   model = Event
   fields = ['name', 'what', 'where', 'why', 'organizer']
   success_url = '/events/'
+
