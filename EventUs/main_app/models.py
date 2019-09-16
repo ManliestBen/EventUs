@@ -7,7 +7,7 @@ class User(models.Model):
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     phone = PhoneNumberField()
-
+    birthday = models.DateField()
     
 
     def __str__(self):
@@ -16,7 +16,7 @@ class User(models.Model):
 class Event(models.Model):
     name = models.CharField(max_length=200)
     what = models.CharField(max_length=200)
-
+    date = models.DateField()
     where = models.CharField(max_length=150)
     why = models.CharField(max_length=150)
     organizer = models.CharField(max_length=100)
