@@ -9,6 +9,11 @@ main {
 }
   
 footer {
-  padding-top: 0;
   text-align: right;
+  padding: 0px;
+}
+
+.col.s6 {
+  background-color: white;
+  padding: 10px;
 }
