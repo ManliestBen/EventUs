@@ -34,3 +34,6 @@ class Item(models.Model):
     def __str__(self):
         return self.name
 
+events = [
+    Event('Calebs test event 2', 'test2', 'testlocation2', 'cause its the second test', 'look at me, im the organizer now'),
+]
