@@ -29,7 +29,7 @@ def events_detail(request, event_id):
 
 class EventUpdate(UpdateView):
   model = Event
-  fields = ['name', 'what', 'where', 'why', 'organizer']
+  fields = ['name', 'what', 'date', 'where', 'why', 'organizer']
 
 class EventDelete(DeleteView):
   model = Event
@@ -37,6 +37,6 @@ class EventDelete(DeleteView):
 
 class EventCreate(CreateView):
   model = Event
-  fields = ['name', 'what', 'where', 'why', 'organizer']
+  fields = ['name', 'what', 'date', 'where', 'why', 'organizer']
   success_url = '/events/'
 
