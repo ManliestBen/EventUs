@@ -36,7 +36,7 @@
     <br>
     <table class="striped">
       <thead>
-        <tr><th>Item</th><th>Category</th><th>Quantity</th><th>Priority</th><th>Cost</th></tr>
+        <tr><th>Item</th><th>Category</th><th>Quantity</th><th>Priority</th><th>Cost</th><th></th></tr>
       </thead>
       <tbody>
         {% for item in event.item_set.all %}
@@ -46,6 +46,7 @@
             <td>{{item.quantity}}</td>
             <td>{{item.priority}}</td>
             <td>{{item.cost}}</td>
+            
           </tr>
         {% endfor %}
       </tbody>

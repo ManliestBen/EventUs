@@ -5,7 +5,7 @@ from django.views.generic import ListView, DetailView
 import uuid
 import boto3
 
-from .models import Event, Photo
+from .models import Event, Photo, Item
 from .forms import ItemForm
 
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
@@ -33,6 +33,7 @@ def events_detail(request, event_id):
 class EventUpdate(UpdateView):
   model = Event
   fields = ['name', 'what', 'date', 'where', 'why', 'organizer']
+  success_url = '/events/'
 
 class EventDelete(DeleteView):
   model = Event
@@ -64,3 +65,15 @@ def add_item(request, event_id):
     new_item.event_id = event_id
     new_item.save()
   return redirect('detail', event_id=event_id)
+
+# def get_item_from_request(request):
+#     print(request.POST)
+#     return the_item
+
+# def delete_post(request):
+#     the_post = get_post_from_request(request)
+#     if request.user == the_post.User:
+#         the_post.delete()
+#         return http.HttpResponseRedirect("/your/success/url/")
+#     else:
+#         return http.HttpResponseForbidden("Cannot delete other's posts")
