@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 import uuid
 import boto3
@@ -8,11 +12,23 @@ import boto3
 from .models import Event, Photo, Item
 from .forms import ItemForm
 
-S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
+S3_BASE_URL = 'https://s3-us-east-2.amazonaws.com/'
 BUCKET = 'eventus-cns'
 
 # Create your views here.
-
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      user = form.save()
+      login(request, user)
+      return redirect('index')
+    else:
+      error_message = 'Invalid sign up - try again'
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'registration/signup.html', context)
 # Define home view
 def home(request):
   return render(request, 'home.html')
@@ -22,28 +38,34 @@ def about(request):
   return render(request, 'about.html')
 
 def events_index(request):
-    events = Event.objects.all()
+    events = Event.objects.filter(user=request.user)
     return render(request, 'events/index.html', { 'events': events })
 
+@login_required
 def events_detail(request, event_id):
   event = Event.objects.get(id=event_id)
   item_form = ItemForm()
   return render(request, 'events/detail.html', { 'event': event, 'item_form': item_form })
 
-class EventUpdate(UpdateView):
+class EventUpdate(LoginRequiredMixin, UpdateView):
   model = Event
   fields = ['name', 'what', 'date', 'where', 'why', 'organizer']
   success_url = '/events/'
 
-class EventDelete(DeleteView):
+class EventDelete(LoginRequiredMixin, DeleteView):
   model = Event
   success_url = '/events/'
 
-class EventCreate(CreateView):
+class EventCreate(LoginRequiredMixin, CreateView):
   model = Event
   fields = ['name', 'what', 'date', 'where', 'why', 'organizer']
   success_url = '/events/'
 
+  def form_valid(self, form):
+      form.instance.user = self.request.user
+      return super().form_valid(form)
+
+@login_required
 def add_photo(request, event_id):
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
@@ -58,6 +80,7 @@ def add_photo(request, event_id):
             print('An error occurred uploading file to S3')
     return redirect('detail', event_id=event_id)
 
+@login_required
 def add_item(request, event_id):
   form = ItemForm(request.POST)
   if form.is_valid():
@@ -77,3 +100,4 @@ def add_item(request, event_id):
 #         return http.HttpResponseRedirect("/your/success/url/")
 #     else:
 #         return http.HttpResponseForbidden("Cannot delete other's posts")
+

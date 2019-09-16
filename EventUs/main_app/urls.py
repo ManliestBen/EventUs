@@ -12,4 +12,5 @@ urlpatterns = [
     path('events/<int:event_id>/add_photo/', views.add_photo, name='add_photo'),
     path('events/<int:event_id>/add_item/', views.add_item, name='add_item'),
     # path('events/<int:pk>/delete_item/', views.ItemDelete.as_view(), name='delete_item'),
+    path('accounts/signup', views.signup, name='signup'),
 ]

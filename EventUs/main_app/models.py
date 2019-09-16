@@ -2,16 +2,7 @@ from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from datetime import date
 from django.utils import timezone
-
-class User(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.CharField(max_length=100)
-    phone = PhoneNumberField()
-    birthday = models.DateField()
-    
-
-    def __str__(self):
-        return self.name
+from django.contrib.auth.models import User
 
 class Event(models.Model):
     name = models.CharField(max_length=200)
@@ -20,6 +11,7 @@ class Event(models.Model):
     where = models.CharField(max_length=150)
     why = models.CharField(max_length=150)
     organizer = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.name
