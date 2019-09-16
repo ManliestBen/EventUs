@@ -16,6 +16,10 @@ class Migration(migrations.Migration):
             name='Event',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('name', models.CharField(max_length=200)),
+                ('what', models.CharField(max_length=200)),
+                ('where', models.CharField(max_length=150)),
+                ('why', models.CharField(max_length=150)),
                 ('organizer', models.CharField(max_length=100)),
             ],
         ),
@@ -23,6 +27,11 @@ class Migration(migrations.Migration):
             name='Item',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('name', models.CharField(max_length=100)),
+                ('category', models.CharField(max_length=100)),
+                ('quantity', models.IntegerField()),
+                ('priority', models.CharField(max_length=50)),
+                ('cost', models.FloatField()),
             ],
         ),
         migrations.CreateModel(
@@ -32,7 +41,6 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=100)),
                 ('email', models.CharField(max_length=100)),
                 ('phone', phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None)),
-                ('birthday', models.DateField()),
             ],
         ),
     ]
