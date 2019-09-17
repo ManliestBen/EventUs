@@ -38,7 +38,7 @@ def about(request):
   return render(request, 'about.html')
 
 def events_index(request):
-    events = Event.objects.filter(user=request.user)
+    events = Event.objects.all()
     return render(request, 'events/index.html', { 'events': events })
 
 @login_required
