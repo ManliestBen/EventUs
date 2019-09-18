@@ -40,6 +40,9 @@ def home(request):
 def about(request):
   return render(request, 'about.html')
 
+def success(request):
+  return render(request, 'success.html')
+
 def events_index(request):
     events = Event.objects.all()
     return render(request, 'events/index.html', { 'events': events })
@@ -135,5 +138,5 @@ def run_sms(request):
 
   print(message.sid)
   
-  return redirect('about')
+  return redirect('success')
   # return HttpResponse('')
