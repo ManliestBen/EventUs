@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: url("https://www.sheknows.com/wp-content/uploads/2018/08/f90ie4wtjtnp3zpaghiv.jpeg");
+    background-size: cover;
+  }
+  
+main {
+  flex: 1 0 auto;
+}
+
+.col.s6 {
+  background-color: white;
+  padding: 10px;
+}
+
+.page-footer {
+  text-align: right;
+  padding: 0px;
+}
+
+nav .nav-wrapper {
+  color: #627264;
+}
+
+h1 {
+  background-color: white;
+  padding: 10px;
+  margin: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+form {
+  background-color: white;
+  padding: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 5%;
+}
+
+label {
+  font: white;
+}
+
+#logo {
+  height: 29.5%;
+  width: 29.5%;
+}
