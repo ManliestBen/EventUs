@@ -122,13 +122,6 @@ def run_sms(request):
   auth_token = '13820f6ceac5c85c875218a33c0e76db'
   client = Client(account_sid, auth_token)
   phoneadj = "+1" + request.user.userprofile.phone
-  # print( "+1" + request.user.userprofile.phone )
-  # phone = input("Please enter your phone number with area code using no spaces: ")
-  # phoneadj = '+1' + phone
-  # print (phoneadj)
-  # message = input("Please enter the message you'd like to send:")
-  # print (message)
-  
   message = client.messages \
     .create(
          body= 'OMFG IT WORKED!',
