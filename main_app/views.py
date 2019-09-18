@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from twilio.rest import Client
+import os
 
 import uuid
 import boto3
@@ -118,8 +119,8 @@ def assoc_user(request, event_id, user_id):
 
 def run_sms(request):
   
-  account_sid = 'AC9f4a82594a7168acc47b2506ccc927d1'
-  auth_token = '13820f6ceac5c85c875218a33c0e76db'
+  account_sid = os.environ['ACCOUNT_SID']
+  auth_token = os.environ['AUTH_TOKEN']
   client = Client(account_sid, auth_token)
   phoneadj = "+1" + request.user.userprofile.phone
   message = client.messages \
