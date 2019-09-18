@@ -36,3 +36,8 @@ class Photo(models.Model):
 
 def __str__(self):
     return f"Photo for event_id: {self.event_id} @{self.url}"
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    phone = models.CharField(max_length=12)
+    
