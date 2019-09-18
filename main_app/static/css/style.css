@@ -4,7 +4,20 @@ body {
     flex-direction: column;
     background-image: url("https://www.sheknows.com/wp-content/uploads/2018/08/f90ie4wtjtnp3zpaghiv.jpeg");
     background-size: cover;
+    color: rgb(273, 117, 118);
+    font-weight: bold;
   }
+  /* @media only screen and (min-width: 768px)
+  {
+    @media only screen and (max-width: 768px) {
+	body {
+	  grid-template-columns: 1fr 3fr;
+	  grid-template-rows: 50px auto 30px;
+    color: rgb(273, 117, 118);
+    font-weight: bold;
+    }
+    }
+  } */
   
 main {
   flex: 1 0 auto;
@@ -18,10 +31,11 @@ main {
 .page-footer {
   text-align: right;
   padding: 0px;
+  background-color: rgb(57, 121, 138);
 }
 
 nav .nav-wrapper {
-  color: #627264;
+  padding: 0;
 }
 
 h1 {
@@ -47,6 +61,44 @@ label {
 }
 
 #logo {
-  height: 29.5%;
-  width: 29.5%;
+  height: 100%;
+  width: 226.8px;
+}
+
+.nav-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgb(57, 121, 138);
+}
+
+.menu-button {
+background-color: rgb(57, 121, 138);
+color:white;
+padding: 15px;
+margin-right: 85px;
+font-size: 15px;
+cursor: pointer;
+border: 1px solid;
+}
+
+.dropdown-menu {
+  display: none;
+  background-color: rgb(273, 117, 118);
+  min-width: 150px;
+  z-index: 1;
+  color: rgb(57, 121, 138);
+}
+
+.dropdown-menu a:hover {
+  background-color: rgb(57, 121, 138);
+  color: rgb(273, 117, 118);
+}
+
+.right-menu:hover .dropdown-menu{
+  display: flex;
+  flex-direction: column;
+}
+
+.right-menu:hover .menu-button {
+  background-color: transparent
 }
