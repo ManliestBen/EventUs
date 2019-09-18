@@ -9,7 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 import uuid
 import boto3
 
-from .models import Event, Photo, Item
+from .models import Event, Photo, Item, User
 from .forms import ItemForm
 
 S3_BASE_URL = 'https://s3-us-east-2.amazonaws.com/'
@@ -30,6 +30,7 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
 # Define home view
+
 def home(request):
   return render(request, 'home.html')
 
@@ -44,8 +45,9 @@ def events_index(request):
 @login_required
 def events_detail(request, event_id):
   event = Event.objects.get(id=event_id)
+  attendees_event_doesnt_have = User.objects.exclude(id__in = event.attendees.all().values_list('id'))
   item_form = ItemForm()
-  return render(request, 'events/detail.html', { 'event': event, 'item_form': item_form })
+  return render(request, 'events/detail.html', { 'event': event, 'item_form': item_form, 'attendees': attendees_event_doesnt_have })
 
 class EventUpdate(LoginRequiredMixin, UpdateView):
   model = Event
@@ -88,6 +90,14 @@ def add_item(request, event_id):
     new_item.event_id = event_id
     new_item.save()
   return redirect('detail', event_id=event_id)
+
+class AttendeesList(ListView):
+    model = User
+    fields = '__all__'
+
+def assoc_user(request, event_id, user_id):
+    Event.objects.get(id=event_id).attendees.add(user_id)
+    return redirect('detail', event_id=event_id)
 
 # def get_item_from_request(request):
 #     print(request.POST)

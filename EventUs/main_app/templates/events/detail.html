@@ -15,6 +15,45 @@
     <a href="{% url 'events_update' event.id %}">Edit</a>
     <a href="{% url 'events_delete' event.id %}">Delete</a>
   </div>
+  <div class="card">
+      <div class="card-content">
+        <h3>{{ event.name }}'s Attendees</h3>
+        {% if event.attendees.count %}
+          {% for attendee in event.attendees.all %}
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">
+                 {{ attendee.username }}
+                </span>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <h5>No Attendees :(</h5>
+        {% endif %}
+      </div>  
+      <div class="col s6">
+              <h3>Available Attendees</h3>
+              {% if attendees.count %}
+                {% for attendee in attendees.all %}
+                  <div class="card">
+                    <div class="card-content">
+                      <span class="card-title">
+                       {{ attendee.username }}
+                      </span>
+                    </div>
+                    <div class="card-action">
+                      <form action="{% url 'assoc_user' event.id attendee.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">Add</button>
+                      </form>
+                    </div>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <h5>{{event.name}} Already Has All Toys Available</h5>
+              {% endif %}
+            </div>
     {% for photo in event.photo_set.all %}
       <img class="responsive-img card-panel" src="{{photo.url}}">
     {% empty %}

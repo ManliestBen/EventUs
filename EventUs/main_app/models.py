@@ -12,6 +12,7 @@ class Event(models.Model):
     why = models.CharField(max_length=150)
     organizer = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    attendees = models.ManyToManyField(User, related_name="attendees")
     
     def __str__(self):
         return self.name
