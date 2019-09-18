@@ -123,4 +123,5 @@ LOGIN_REDIRECT_URL = '/events/'
 
 LOGOUT_REDIRECT_URL = '/'
 
-
+import django_heroku
+django_heroku.settings(locals())
