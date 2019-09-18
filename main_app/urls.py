@@ -16,4 +16,5 @@ urlpatterns = [
     path('accounts/signup', views.signup, name='signup'),
     # path('events/<int:event_id>/events_attendees', views.AttendeeCreate.as_view(), name='events_attendees'),
     path('events/<int:event_id>/attendees/', views.AttendeesList.as_view(), name='events_attendees'),
+    path('about/event/run_sms', views.run_sms)
 ]
