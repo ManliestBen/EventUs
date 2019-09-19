@@ -111,26 +111,6 @@ def assign_bringer(request, item_id):
   item.save()
   return redirect('detail', event_id=item.event.id)
 
-# def assign_bringer(request, item_id):
-#     # get the item to update from the db
-#     item = Item.objects.get(id=item_id)
-#     # update bringer using the posted input data
-#     item.bringer = request.POST.get('bringer')
-#     item.save()
-#     return redirect('detail', event_id=item.event.id)
-
-# def get_item_from_request(request):
-#     print(request.POST)
-#     return the_item
-
-# def delete_post(request):
-#     the_post = get_post_from_request(request)
-#     if request.user == the_post.User:
-#         the_post.delete()
-#         return http.HttpResponseRedirect("/your/success/url/")
-#     else:
-#         return http.HttpResponseForbidden("Cannot delete other's posts")
-
 def run_sms(request, event_id):
   event = Event.objects.get(id=event_id)
   account_sid = os.environ['ACCOUNT_SID']
