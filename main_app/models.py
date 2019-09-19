@@ -3,6 +3,9 @@ from phonenumber_field.modelfields import PhoneNumberField
 from datetime import date
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+
 
 class Event(models.Model):
     name = models.CharField(max_length=200)
@@ -23,7 +26,7 @@ class Item(models.Model):
     quantity = models.IntegerField()
     priority = models.CharField(max_length=50)
     cost = models.FloatField()
-
+    bringer = models.CharField(max_length=20)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
 
