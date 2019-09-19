@@ -42,7 +42,7 @@ form {
   background-color: white;
   padding: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border-radius: 5%;
+  border-radius: 5px;
 }
 
 label {
@@ -51,29 +51,31 @@ label {
 
 #logo {
   height: 100%;
-  width: 226.8px;
+  width: 224px;
 }
 
 .nav-wrapper {
   width: 100%;
   margin: 0 auto;
   background-color: rgb(57, 121, 138);
+  min-width: 460px;
 }
 
 .menu-button {
-background-color: rgb(57, 121, 138);
+background-color: rgb(273, 117, 118);
 color:white;
 padding: 15px;
 margin-right: 85px;
 font-size: 15px;
 cursor: pointer;
 border: 1px solid;
+width: 150px;
 }
 
 .dropdown-menu {
   display: none;
   background-color: rgb(273, 117, 118);
-  min-width: 150px;
+  min-width: 149px;
   z-index: 1;
   color: rgb(57, 121, 138);
 }
@@ -95,4 +97,75 @@ border: 1px solid;
 
 .card .card-content {
   font-size: 12px;
+}
+
+.about {
+  background-color: white;
+  color: rgb(273, 117, 118);
+  padding: 10px;
+}
+
+.about-message {
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.home-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.card {
+  position: relative;
+  margin: .5rem 0 1rem 0;
+  background-color: #fff;
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+  border-radius: 2px;
+}
+
+.index-card{
+  position: relative;
+  margin: .5rem 0 1rem 0;
+  background-color: #fff;
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+  border-radius: 5px;
+  display: flex;
+  min-width: 300px;
+  max-width: 350px;
+  padding: 5px;
+}
+
+.delete-confirm-message {
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.card .card-content p {
+  margin: 0;
+}
+
+.card .card-content .card-title {
+  display: block;
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+
+.index-card .card-content p {
+  margin: 0;
+}
+
+.index-card .card-content .card-title {
+  display: block;
+  line-height: 32px;
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: rgb(273, 117, 118);
 }
