@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Events Details page - caleb</h1>
+<h1>Event Details</h1>
 <a href='run_sms'>SEND ME THE DEETS!!!</a>
 <div class="card">
   <div class="card-content">
     <span class="card-title">{{ event.name }}</span>
-    <p>Event Type: {{ event.what }}</p>
-    <p>Event Location: {{ event.where }}</p>
-    <p>Event Description: {{ event.why }}</p>
-    <p>Event Admin: {{ event.organizer }}</p>
+    <p>Type: {{ event.what }}</p>
+    <p>Location: {{ event.where }}</p>
+    <p>Description: {{ event.why }}</p>
+    <p>Organizer: {{ event.organizer }}</p>
   </div>
    <div class="card-action">
     <a href="{% url 'events_update' event.id %}">Edit</a>
