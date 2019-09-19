@@ -171,3 +171,8 @@ width: 150px;
   font-size: 20px;
   color: rgb(273, 117, 118);
 }
+
+img.responsive-img, video.responsive-video {
+  max-width: 500px;
+  max-height: 365px;
+}
