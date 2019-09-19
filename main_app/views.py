@@ -117,7 +117,7 @@ def assoc_user(request, event_id, user_id):
 #     else:
 #         return http.HttpResponseForbidden("Cannot delete other's posts")
 
-def run_sms(request):
+def run_sms(request, event_id):
   
   account_sid = os.environ['ACCOUNT_SID']
   auth_token = os.environ['AUTH_TOKEN']
