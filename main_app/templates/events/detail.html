@@ -51,7 +51,7 @@
                   </div>
                 {% endfor %}
               {% else %}
-                <h5>{{event.name}} Already Has All Toys Available</h5>
+                <h5>Everyone's coming!</h5>
               {% endif %}
             </div>
     {% for photo in event.photo_set.all %}
@@ -75,7 +75,7 @@
     <br>
     <table class="striped">
       <thead>
-        <tr><th>Item</th><th>Category</th><th>Quantity</th><th>Priority</th><th>Cost</th><th></th></tr>
+        <tr><th>Item</th><th>Category</th><th>Quantity</th><th>Priority</th><th>Cost</th><th>Attendee</th><th></th></tr>
       </thead>
       <tbody>
         {% for item in event.item_set.all %}
@@ -85,7 +85,14 @@
             <td>{{item.quantity}}</td>
             <td>{{item.priority}}</td>
             <td>{{item.cost}}</td>
-            
+            <td>{{item.bringer}}</td>
+            <td>
+              <form action="{% url 'assign_bringer' item.id %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="bringer" placeholder="Bringer's Name">
+                <input type="submit" class="btn"  value="Add">
+              </form>
+            </td>
           </tr>
         {% endfor %}
       </tbody>

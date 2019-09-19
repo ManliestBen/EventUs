@@ -105,6 +105,20 @@ def assoc_user(request, event_id, user_id):
     Event.objects.get(id=event_id).attendees.add(user_id)
     return redirect('detail', event_id=event_id)
 
+def assign_bringer(request, item_id):
+  item = Item.objects.get(id=item_id)
+  item.bringer = request.POST.get('bringer')
+  item.save()
+  return redirect('detail', event_id=item.event.id)
+
+# def assign_bringer(request, item_id):
+#     # get the item to update from the db
+#     item = Item.objects.get(id=item_id)
+#     # update bringer using the posted input data
+#     item.bringer = request.POST.get('bringer')
+#     item.save()
+#     return redirect('detail', event_id=item.event.id)
+
 # def get_item_from_request(request):
 #     print(request.POST)
 #     return the_item
