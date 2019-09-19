@@ -3,6 +3,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     background-image: url("https://www.sheknows.com/wp-content/uploads/2018/08/f90ie4wtjtnp3zpaghiv.jpeg");
+    background-position: center;
     background-size: cover;
     color: rgb(273, 117, 118);
     font-weight: bold;
@@ -114,6 +115,7 @@ width: 150px;
 .home-title {
   text-align: center;
   font-weight: bold;
+  font-size: 54px;
 }
 
 .card {
