@@ -123,7 +123,7 @@ def run_sms(request, event_id):
   auth_token = os.environ['AUTH_TOKEN']
   client = Client(account_sid, auth_token)
   phoneadj = "+1" + request.user.userprofile.phone
-  eventmsg = event.name
+  eventmsg = 'Welcome to EventUs!  Here are your event details: ' + '\n' + event.name + '\n' + 'What: ' + event.what + '\n' + 'Location: ' + event.where + '\n' + 'Description: ' + event.why + '\n' + 'Organizer: ' + event.organizer
   message = client.messages \
     .create(
          body= eventmsg,
