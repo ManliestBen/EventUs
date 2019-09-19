@@ -1,26 +1,28 @@
 # EventUs: 
+
+[EventUs]()
+
 ## Focus on the party
 
 ## Introduction:
-### How many times have you gotten to the party and there's no ice?  To the BBQ and there's no charcoal?  How many times have you had to send people away to fetch something that has been forgotten?  Now, there's an app for that! Introducing EventUs!  The perfect online platform that plans every part of your party.
+### How many times have you been to an AMAZING party filled with your best friends, and had to leave because you have too many coolers but ran out of ice, too many hot dogs but ran out of buns, or heaven forbid too much water and not enough BOOZE. 
 
-<<<<<<< HEAD
-## WIREFRAME HERE
-## ERD HERE
+### One of the biggest buzzkills is to leave for a store run while everyone is back having fun.
 
-## LINK TO PITCH DECK
+### Our goal at EventUs is to keep preparation simple and easy so that you DON'T STOP YOUR PARTY!
 
-## LINK TO TRELLO
-=======
-## Entity Relationship Diagram:
-![ERD image](assets/wireframe2.png)
-## Wireframe of Pages:
-![Page layout wireframe](assets/ParrotyWireframe.png)
-## Here is a link to our [pitch deck](https://docs.google.com/presentation/d/1OT_RDEHj0WkTT491Q2uGVndk18ljhklRSpTLNGARV9c/edit?usp=sharing)
-## Here is our [Trello Board](https://trello.com/b/7x3lbQZp/unit-3-project-sei)
->>>>>>> e1ca0344e9c4c29a3e379c427bdc549f547ed0cb
+### Click on the menu in the top right corner to Add an Event, View your Events, or Log Out till next time.
 
-## LINK TO HEROKU
+### Start the party!
+
+![Wireframe]()
+
+![Entity Relationship Diagram]()
+
+[Pitch Deck](https://docs.google.com/presentation/d/1OT_RDEHj0WkTT491Q2uGVndk18ljhklRSpTLNGARV9c/edit?usp=sharing)
+
+[Trello Board](https://trello.com/b/7x3lbQZp/unit-3-project-sei)
+
 
 ## Technologies Used:
 - Python
@@ -29,10 +31,6 @@
 - CSS / HTML
 - Spotify API (tbd - stretch)
 - SMS Messaging API (tbd)
-<<<<<<< HEAD
-=======
-  
->>>>>>> e1ca0344e9c4c29a3e379c427bdc549f547ed0cb
 
 ## Stretch Goals:
 - Spotify API
@@ -41,8 +39,3 @@
 - Item Sub-Categories
 - Item Purchase Location (API)
 
-<<<<<<< HEAD
-## Caleb is getting burgers.
-
-=======
->>>>>>> e1ca0344e9c4c29a3e379c427bdc549f547ed0cb
