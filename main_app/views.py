@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
@@ -5,6 +6,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from twilio.rest import Client
+import os
 
 import uuid
 import boto3
@@ -37,6 +40,9 @@ def home(request):
 #Define about view
 def about(request):
   return render(request, 'about.html')
+
+def success(request):
+  return render(request, 'success.html')
 
 def events_index(request):
     events = Event.objects.all()
@@ -111,3 +117,18 @@ def assoc_user(request, event_id, user_id):
 #     else:
 #         return http.HttpResponseForbidden("Cannot delete other's posts")
 
+def run_sms(request, event_id):
+  event = Event.objects.get(id=event_id)
+  account_sid = os.environ['ACCOUNT_SID']
+  auth_token = os.environ['AUTH_TOKEN']
+  client = Client(account_sid, auth_token)
+  phoneadj = "+1" + request.user.userprofile.phone
+  eventmsg = 'Welcome to EventUs!  Here are your event details: ' + '\n' + event.name + '\n' + 'What: ' + event.what + '\n' + 'Location: ' + event.where + '\n' + 'Description: ' + event.why + '\n' + 'Organizer: ' + event.organizer
+  message = client.messages \
+    .create(
+         body= eventmsg,
+         from_='+18705222095',
+         to= phoneadj
+     )
+  print(message.sid)
+  return redirect('success')
