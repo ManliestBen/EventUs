@@ -118,14 +118,15 @@ def assoc_user(request, event_id, user_id):
 #         return http.HttpResponseForbidden("Cannot delete other's posts")
 
 def run_sms(request, event_id):
-  
+  event = Event.objects.get(id=event_id)
   account_sid = os.environ['ACCOUNT_SID']
   auth_token = os.environ['AUTH_TOKEN']
   client = Client(account_sid, auth_token)
   phoneadj = "+1" + request.user.userprofile.phone
+  eventmsg = event.name
   message = client.messages \
     .create(
-         body= 'OMFG IT WORKED!',
+         body= eventmsg,
          from_='+18705222095',
          to= phoneadj
      )
