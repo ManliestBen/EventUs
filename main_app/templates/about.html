@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>About EventUs</h1>
-<h1>{{ user.username }}</h1>
-<h1>{{ user.userprofile.phone }}</h1>
-
-<a href='event/run_sms'>Click me!</a>
-
+<h1 class="home-title">About (Event)Us!</h1>
+<hr>
+<br>
+<div class="about-message">
+<p class="about">How many times have you been to an AMAZING party filled with your best friends, and had to leave because you have too many coolers but ran out of ice, too many hot dogs but ran out of buns, or heaven forbid too much water and not enough BOOZE. One of the biggest buzzkills is to leave for a store run while everyone is back having fun.</p>
+<p class="about">Our goal at EventUs is to keep preparation simple and easy so that you DON'T STOP YOUR PARTY! </p>
+<p class="about">Click on the menu in the top right corner to Add an Event, View your Events, or Log Out till next time.</p>
+<p class="about">Start the party!</p>
+</div>
 
 {% endblock %}
