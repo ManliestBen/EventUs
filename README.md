@@ -15,27 +15,33 @@
 
 ### Start the party!
 
-![Wireframe]()
+![Wireframe](https://i.imgur.com/ifb4z2c.png)
 
-![Entity Relationship Diagram]()
+![Entity Relationship Diagram](https://i.imgur.com/yVgUhtt.png)
 
 [Pitch Deck](https://docs.google.com/presentation/d/1OT_RDEHj0WkTT491Q2uGVndk18ljhklRSpTLNGARV9c/edit?usp=sharing)
 
 [Trello Board](https://trello.com/b/7x3lbQZp/unit-3-project-sei)
 
+# Screenshots
+
+![Homepage](https://i.imgur.com/LpOpzGv.jpg)
+![Signup](https://i.imgur.com/whVe1g5.png)
+![Events](https://i.imgur.com/sjWZop1.jpg)
+![Details1](https://i.imgur.com/sCaD68v.png)
+![Details2](https://i.imgur.com/i5N78sT.png)
+![DetailItems](https://i.imgur.com/PEXoy0b.png)
 
 ## Technologies Used:
 - Python
 - Django
 - GitHub
 - CSS / HTML
-- Spotify API (tbd - stretch)
-- SMS Messaging API (tbd)
+- Twilio API
 
 ## Stretch Goals:
-- Spotify API
-- SMS Messaging 
+- Spotify API for specific events
+- SMS Messaging (just kidding we killed it!)
 - Drinking Age Options
 - Item Sub-Categories
 - Item Purchase Location (API)
-
