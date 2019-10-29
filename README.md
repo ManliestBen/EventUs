@@ -1,6 +1,6 @@
 # EventUs: 
 
-[EventUs]()
+[EventUs](https://unit3eventus.herokuapp.com/)
 
 ## Focus on the party
 
