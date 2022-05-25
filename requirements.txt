@@ -53,7 +53,7 @@ psycopg2==2.8.3
 psycopg2-binary==2.8.3
 ptyprocess==0.6.0
 Pygments==2.4.2
-PyJWT==1.7.1
+PyJWT==2.4.0
 pylint==2.3.1
 pyrsistent==0.15.4
 PySocks==1.7.0
